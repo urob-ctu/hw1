@@ -128,7 +128,7 @@ class Tensor:
         return out
     
     def __pow__(self, other) -> 'Tensor':
-        assert isinstance(other, (int, float))
+        assert ... # your code here
         out = ... # your code here
         
         def _backward():
