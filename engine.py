@@ -65,7 +65,6 @@ class Tensor:
         _op (str, optional): Operation associated with this tensor. Defaults to ''.
         label (str, optional): Label or name for the tensor. Defaults to ''.
         req_grad (bool, optional): Whether gradient updates should be performed for this tensor. Defaults to False.
-        is_weight (bool, optional): Whether the tensor has a batch dimension. Defaults to False. The batch dimension is the first dimension of the tensor.
 
     Attributes:
         data (numpy.ndarray): The underlying data stored in the tensor.
@@ -79,8 +78,6 @@ class Tensor:
         self.label = label
         self.grad = np.zeros(self.data.shape)
         self.req_grad = req_grad
-        self.is_weight = is_weight
-        self.grad_divisor = None
 
         self._backward = back_none
         self._prev = set(_parent)
